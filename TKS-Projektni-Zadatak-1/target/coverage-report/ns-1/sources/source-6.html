@@ -1,0 +1,183 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Util</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Util (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Util</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (23/23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/**
+<i class="no-highlight">2</i>&nbsp; * Utility class for Calculator.
+<i class="no-highlight">3</i>&nbsp; *
+<i class="no-highlight">4</i>&nbsp; * @author Vanja Ðenadija
+<i class="no-highlight">5</i>&nbsp; * @since 25.11.2022
+<i class="no-highlight">6</i>&nbsp; */
+<i class="no-highlight">7</i>&nbsp;public final class Util {
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;    private Util() {
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;    }
+<i class="no-highlight">12</i>&nbsp;
+<i class="no-highlight">13</i>&nbsp;    /**
+<i class="no-highlight">14</i>&nbsp;     * Method for taking the factorial of a number.
+<i class="no-highlight">15</i>&nbsp;     *
+<i class="no-highlight">16</i>&nbsp;     * @param value number for which the factorial operation is being performed
+<i class="no-highlight">17</i>&nbsp;     * @return the result of computing the factorial
+<i class="no-highlight">18</i>&nbsp;     */
+<i class="no-highlight">19</i>&nbsp;    public static int factorial(int value) {
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        int factorial = 1;</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        for (int i = value; i &gt; 0; i--) {</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;            factorial *= i;</b>
+<i class="no-highlight">23</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">24</i>&nbsp;        return factorial;</b>
+<i class="no-highlight">25</i>&nbsp;    }
+<i class="no-highlight">26</i>&nbsp;
+<i class="no-highlight">27</i>&nbsp;    /**
+<i class="no-highlight">28</i>&nbsp;     * Method for computing the power of a number.
+<i class="no-highlight">29</i>&nbsp;     *
+<i class="no-highlight">30</i>&nbsp;     * @param value number for which the power operation is being performed
+<i class="no-highlight">31</i>&nbsp;     * @param pow   power
+<i class="no-highlight">32</i>&nbsp;     * @return the result of computing the power
+<i class="no-highlight">33</i>&nbsp;     */
+<i class="no-highlight">34</i>&nbsp;    public static int power(int value, int pow) {
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        int result = 1;</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        for (int i = 0; i &lt; pow; i++) {</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;            result *= value;</b>
+<i class="no-highlight">38</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">39</i>&nbsp;        return result;</b>
+<i class="no-highlight">40</i>&nbsp;    }
+<i class="no-highlight">41</i>&nbsp;
+<i class="no-highlight">42</i>&nbsp;    /**
+<i class="no-highlight">43</i>&nbsp;     * Method for computing if a number is Armstrong or not.
+<i class="no-highlight">44</i>&nbsp;     *
+<i class="no-highlight">45</i>&nbsp;     * @param value number we are checking to see if it is Armstrong
+<i class="no-highlight">46</i>&nbsp;     * @return true if a number is Armstrong, otherwise false
+<i class="no-highlight">47</i>&nbsp;     */
+<i class="no-highlight">48</i>&nbsp;    public static Boolean isArmstrong(int value) {
+<b class="fc"><i class="no-highlight">49</i>&nbsp;        int numberOfDigits = String.valueOf(value).length();</b>
+<b class="fc"><i class="no-highlight">50</i>&nbsp;        int sumOfNPow = 0;</b>
+<b class="fc"><i class="no-highlight">51</i>&nbsp;        int valueTemp = value;</b>
+<i class="no-highlight">52</i>&nbsp;
+<b class="fc"><i class="no-highlight">53</i>&nbsp;        while (valueTemp != 0) {</b>
+<b class="fc"><i class="no-highlight">54</i>&nbsp;            int currentDigit = valueTemp % 10;</b>
+<b class="fc"><i class="no-highlight">55</i>&nbsp;            sumOfNPow += Math.pow(currentDigit, numberOfDigits);</b>
+<b class="fc"><i class="no-highlight">56</i>&nbsp;            valueTemp /= 10;</b>
+<b class="fc"><i class="no-highlight">57</i>&nbsp;        }</b>
+<i class="no-highlight">58</i>&nbsp;
+<b class="fc"><i class="no-highlight">59</i>&nbsp;        return value == sumOfNPow;</b>
+<i class="no-highlight">60</i>&nbsp;    }
+<i class="no-highlight">61</i>&nbsp;
+<i class="no-highlight">62</i>&nbsp;    /**
+<i class="no-highlight">63</i>&nbsp;     * Method for computing if a number is perfect or not.
+<i class="no-highlight">64</i>&nbsp;     *
+<i class="no-highlight">65</i>&nbsp;     * @param value number we are checking to see if it is perfect
+<i class="no-highlight">66</i>&nbsp;     * @return true if a number is perfect, otherwise false
+<i class="no-highlight">67</i>&nbsp;     */
+<i class="no-highlight">68</i>&nbsp;    public static Boolean isPerfect(int value) {
+<b class="fc"><i class="no-highlight">69</i>&nbsp;        int i = 1, sumOdDivisors = 0;</b>
+<b class="fc"><i class="no-highlight">70</i>&nbsp;        while (i &lt;= value / 2) {</b>
+<b class="fc"><i class="no-highlight">71</i>&nbsp;            if (value % i == 0) {</b>
+<b class="fc"><i class="no-highlight">72</i>&nbsp;                sumOdDivisors = sumOdDivisors + i;</b>
+<i class="no-highlight">73</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">74</i>&nbsp;            i++;</b>
+<i class="no-highlight">75</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">76</i>&nbsp;        return value == sumOdDivisors;</b>
+<i class="no-highlight">77</i>&nbsp;    }
+<i class="no-highlight">78</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-02 12:00</div>
+</div>
+</body>
+</html>

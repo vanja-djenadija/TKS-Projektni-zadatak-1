@@ -1,0 +1,6 @@
+Uputstvo
+
+Izvorni kod se nalazi u paketu main, a testne klase u test.
+Izvještaj testiranja sa pokrivenošču se nalazi u target/coverage-report.
+Izvještaj PIT mutacionog testiranja se nalazi u target/report.
+Javadoc dokumentacija se nalazi u target/javadoc.
